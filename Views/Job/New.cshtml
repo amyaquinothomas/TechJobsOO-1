@@ -1,0 +1,36 @@
+﻿@model TechJobs.ViewModels.NewJobViewModel
+
+<div asp-validation-summary="All"></div>
+
+<form asp-controller="Job" asp-action="New" method="post">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input class="form-control" asp-for="Name" />
+    </div>
+    <div class="form-group">
+        <label asp-for="EmployerID"></label>
+        <select asp-for="EmployerID" asp-items="Model.Employers"></select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Location"></label>
+        <select asp-for="Location" asp-items="Model.Locations"></select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PostionType"></label>
+        <select asp-for="PostionType" asp-items="Model.PositionTypes"></select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CoreCompetency"></label>
+        <select asp-for="CoreCompetency" asp-items="Model.CoreCompetencies"></select>
+    </div>
+
+
+    @{
+        // TODO #5 - Create <select> dropdowns for other job fields (outside of this @{ } block)
+    }
+
+    <input type="submit" value="Add Job" />
+</form>
